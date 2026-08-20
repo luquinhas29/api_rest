@@ -542,4 +542,56 @@ Deixe microserviços “completos” em segundo plano se o tempo apertar; tenha 
 
 ---
 
+## 13. Sprint urgente — entrevista técnica 26/08 às 13h
+
+Entrevista com **desenvolvedor** (não só RH). Priorize profundidade no que você já usa + discurso honesto nas lacunas.
+
+### Resposta sugerida para confirmar
+
+> Lucas, bom dia! Tudo bem, sim. Consigo sim no dia 26/08 às 13h. Obrigado pelo convite — fico no aguardo do link/instruções. Abs!
+
+### O que o entrevistador técnico costuma testar (júnior)
+
+1. Fluxo real de uma API Spring (controller → service → repository)
+2. Modelagem / SQL / JPA (relacionamentos, N+1, transação)
+3. Decisões de design (DTO, Repository, Service, hexagonal em alto nível)
+4. Testes (o que você testa e por quê)
+5. Experiência na MV (bug, regra de negócio, integração)
+6. Noções de cache, CI/CD e cloud (mesmo sem expertise)
+
+### Dia a dia até a entrevista
+
+| Dia | Foco | Meta concreta |
+|---|---|---|
+| 20–21 | Java/Spring + API + JPA | Explicar em voz alta 1 projeto seu ponta a ponta; revisar `@Transactional`, lazy/eager, N+1, status HTTP, Exception Handler |
+| 22 | SQL Server + Redis (conceito + lab leve) | Saber diferenças vs Oracle; explicar cache-aside + TTL; se der, Docker + 1 `@Cacheable` |
+| 23 | Hexagonal + microserviços (discurso) | Desenhar hexagonal em 2 min; trade-offs monólito vs microserviço; Repository vs Service |
+| 24 | Testes/TDD + CI/CD + Azure/OpenShift glossário | 1 exemplo TDD; diferença unitário vs integração; CI vs CD; 3 serviços Azure + o que é OpenShift |
+| 25 | Simulado + histórias STAR | Pitch 60s; 10 perguntas técnicas em voz alta; 3 histórias (bug, aprendizado, colaboração) |
+| 26 manhã | Só revisão leve | Folhear anotações; não aprender assunto novo; testar câmera/link |
+
+### O que melhorar com mais impacto (nessa ordem)
+
+1. **Narrativa dos seus projetos** — não basta ter no GitHub; precisa contar decisão técnica e problema resolvido
+2. **Hexagonal + microserviços** — vocabulário claro (mesmo sem lab perfeito)
+3. **SQL Server / Redis** — pelo menos conceito + exemplo mental alinhado à vaga
+4. **TDD** — um exemplo concreto Red → Green → Refactor
+5. **Performance júnior** — N+1, índice, cache (3 frases prontas)
+6. **Azure/OpenShift** — glossário curto, sem fingir experiência profunda
+
+### Frases prontas para lacunas
+
+- SQL Server: “Venho de Oracle/PostgreSQL; a lógica SQL é a mesma e já estudei o driver/datasource do SQL Server no Spring.”
+- Redis: “Usaria cache-aside no GET com TTL e invalidação no update.”
+- Hexagonal: “Domínio no centro, ports como contratos, adapters para HTTP e banco — facilita teste sem subir o Spring.”
+- Azure/OpenShift: “Tenho Docker e Azure DevOps na prática; estudei App Service/Azure SQL/Redis e OpenShift como Kubernetes enterprise.”
+
+### No dia da entrevista
+
+- Chegue 10 min antes; fone/câmera ok; repo favorito aberto
+- Se não souber: diga o que sabe, o que faria e como validaria — não invente
+- Termine com 1 pergunta boa: “Quais são os principais desafios técnicos do time hoje?” ou “Como é o fluxo de code review/CI no projeto?”
+
+---
+
 *Guia alinhado à vaga R00348516 (BackEnd Junior — Avanade / São Paulo) e ao perfil Java/Spring atual. Atualize este documento conforme o lab evoluir e marque os checklists.*
