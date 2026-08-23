@@ -544,6 +544,8 @@ Deixe microserviços “completos” em segundo plano se o tempo apertar; tenha 
 
 ## 13. Sprint urgente — entrevista técnica 26/08 às 13h
 
+**Questionário completo:** [`QUESTIONARIO_ENTREVISTA_AVANADE_26_08.md`](QUESTIONARIO_ENTREVISTA_AVANADE_26_08.md) — 73 perguntas com respostas para estudar até quarta.
+
 Entrevista com **desenvolvedor** (não só RH). Priorize profundidade no que você já usa + discurso honesto nas lacunas.
 
 ### Resposta sugerida para confirmar
