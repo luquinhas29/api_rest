@@ -1,271 +1,274 @@
-# Plano de estudos — Backend Java / Spring Boot
+# Plano de estudos — ajustado à sua rotina real
 
 > Para: Lucas Williams  
-> Contexto: entrevista recente como experiência; base atual = API REST Spring Boot + JPA + PostgreSQL  
-> Objetivo: fixar fundamentos, fechar lacunas típicas de entrevista e ter projetos que mostrem evolução real
-
-Entrevista que “não foi bem” quase sempre mostra **onde estudar**, não que você “não serve”.  
-Use o que travou como checklist — anote o que não soube explicar e priorize isso na Fase 1.
+> Stack no trabalho: **Angular + Java + Spring + SQL/PLSQL**  
+> Objetivo: fechar lacunas de entrevista (ex.: Spring × Spring Boot) sem quebrar sono, academia e futebol
 
 ---
 
-## 0. Diagnóstico rápido (faça hoje, 20–30 min)
+## Sua rotina (base do plano)
 
-Escreva em um caderno ou arquivo `GAPS.md` (só para você):
+| Horário | Seg–Sex |
+|---------|---------|
+| 04:30 | Acorda |
+| ~05:40 | Deixa a esposa |
+| 06:10 | Chega no trabalho |
+| **06:15–07:50** | **Janela principal de estudo** (~1h15–1h30) |
+| 08:00–18:00 | Expediente |
+| ~19:00 | Chega em casa |
+| 19:30 | Academia (exceto **quarta** → futebol) |
+| após academia | Higiene + dormir cedo (acordar 04:30) |
 
-| Pergunta | Consegui explicar / fazer? | Prioridade |
-|----------|----------------------------|------------|
-| **Spring × Spring Boot** | **não (entrevista)** | **P0 — já** |
-| O que é DI / IoC / Bean | | **P0** |
-| O que faz `@SpringBootApplication` | | **P0** |
-| O que é uma API REST? | | |
-| Controller × Service × Repository | | |
-| O que é `@Transactional` e ACID? | | |
-| Diferença entre `GET/POST/PUT/PATCH/DELETE` | | |
-| O que é JPA / Hibernate / Entity? | | |
-| `ManyToOne` / `OneToMany` e lazy vs eager | | |
-| Como tratar erro 404 / validação | | |
-| O que é DTO e por que usar | | |
-| SQL básico (JOIN, WHERE, INDEX) | | |
-| Collections, equals/hashCode, Streams | | |
-| Git: branch, commit, PR | | |
+| Fim de semana | |
+|---------------|--|
+| **Sábado** | Futebol 06:00–09:00 → em casa ~10:00 → estudo **10:30–12:00** |
+| **Domingo** | Simulação de entrevista + revisão leve **09:00–10:00** (ou outro horário fixo) |
 
-Marque **vermelho** o que falhou na entrevista → isso entra primeiro.  
-Respostas-modelo das básicas: [`ENTREVISTA_FUNDAMENTOS.md`](./ENTREVISTA_FUNDAMENTOS.md).
+### Regras de ouro (pra não abandonar)
 
----
-
-## 1. Rotina semanal (sustentável)
-
-**Meta:** 8–12h/semana (melhor constante do que maratona).
-
-| Dia | Foco | Tempo |
-|-----|------|-------|
-| Seg / Qua / Sex | Teoria + anotações curtas | 45–60 min |
-| Ter / Qui | Código no projeto | 60–90 min |
-| Sáb | Projeto + README + commit | 2–3 h |
-| Dom | Revisão ativa + simular entrevista (falar em voz alta) | 45–60 min |
-
-### Método de fixação (obrigatório)
-
-Para cada tema:
-
-1. **Explicar em voz alta** em 2 minutos (como se fosse entrevista).
-2. **Escrever 3–5 linhas** com suas palavras.
-3. **Aplicar no código** no mesmo dia ou no dia seguinte.
-4. **Commit** com mensagem clara (`feat: add UserService with @Transactional`).
-
-Se não consegue explicar sem olhar, ainda não fixou.
+1. **Estudo pesado = manhã no trabalho (06:15–07:50).** Cabeça fresca, sem academia no meio.
+2. **Noite depois da academia = no máximo 15 min** de flashcard no celular, ou **zero**. Sono > mais uma hora forçada.
+3. **Quarta à noite e sábado de manhã** são futebol → não planejar código nesses horários.
+4. Meta realista: **~7–8 h/semana**, não 12. Constância ganha de maratona.
+5. No expediente, quando aparecer algo (Spring, SQL, Angular), anote 1 linha em `GAPS.md` — vira material de estudo no dia seguinte.
 
 ---
 
-## 2. Mapa de fases
+## Grade semanal fixa — o que estudar cada dia
 
-### Fase A — Fundamentos que sustentam entrevista (2–3 semanas)
+### Segunda — fundamentos Spring (entrevista)
 
-**Java**
-- OOP: encapsulamento, herança, polimorfismo, interfaces
-- `equals` / `hashCode` / `toString`
-- Collections (`List`, `Set`, `Map`) e quando usar cada uma
-- Streams + `Optional` (evitar `.get()` cego)
-- Exceções: checked vs unchecked
+**06:15–07:50 · ~60–75 min**
 
-**SQL + banco**
-- `SELECT`, `JOIN`, `GROUP BY`, índices básicos
-- Chave primária / estrangeira
-- O que é uma transação no banco (ACID)
+| Bloco | Tempo | O que fazer |
+|-------|-------|-------------|
+| Leitura | 25 min | 1 tema de `ENTREVISTA_FUNDAMENTOS.md` |
+| Falar | 15 min | Explicar em voz baixa / gravar áudio de 2 min |
+| Escrever | 15 min | 5–8 linhas com **suas** palavras |
+| Fechamento | 5 min | Marcar no `GAPS.md` se ainda trava |
 
-**HTTP / REST**
-- Status codes: 200, 201, 204, 400, 404, 409, 500
-- Idempotência (GET vs POST vs PUT)
-- Path params vs query params vs body
+**Semana 1 (segunda):** Spring × Spring Boot (pergunta 1)  
+**Semanas seguintes:** DI/IoC → `@SpringBootApplication` → Bean → starters → Tomcat embutido
 
-**Checklist de saída da Fase A**
-- [ ] Explico OOP com exemplos do meu domínio (User/Department)
-- [ ] Escrevo um JOIN User × Department sem colar
-- [ ] Explico REST + status codes sem ler
+**Noite:** off ou 10 flashcards no celular.
 
 ---
 
-### Fase B — Spring Boot “de verdade” (3–4 semanas)
+### Terça — Java que entrevista cobra
 
-Camadas (seu projeto hoje pula a Service — isso é lacuna clássica de entrevista):
+**06:15–07:50**
+
+| Foco rotativo (1 por terça) |
+|-----------------------------|
+| OOP (encapsulamento, interface × classe abstrata) |
+| `==` vs `equals` / `hashCode` |
+| `List` × `Set` × `Map` |
+| `Optional` e por que evitar `.get()` cego |
+| Exceções checked × unchecked |
+| Streams (map/filter/collect) — nível básico |
+
+**Formato:** 30 min teoria/exemplo → 30 min exercício pequeno (pode ser no papel ou no IntelliJ) → 10 min explicar em voz alta.
+
+**Noite:** off (academia).
+
+---
+
+### Quarta — SQL / PLSQL (aproveita o que você já usa)
+
+**06:15–07:50** · à noite é futebol → **só manhã**
+
+| Bloco | O que fazer |
+|-------|-------------|
+| 20 min | Pegar **1 query ou procedure do trabalho** (sem dado sensível) e reescrever o raciocínio |
+| 25 min | Conceito de entrevista: JOIN, índice, PK/FK, transação ACID, ou diferença SQL × PLSQL |
+| 20 min | Ligar com JPA: “isso no banco vira o quê na Entity / Repository?” |
+| 10 min | Explicar em 2 min como se fosse entrevista |
+
+**Ideia:** você já pratica SQL no dia a dia — o gap costuma ser **explicar**, não só executar.
+
+---
+
+### Quinta — código no `api_rest` (projeto)
+
+**06:15–07:50** · sessão de implementação
+
+Checklist da Etapa 1 (`PROJETOS.md`), um pedaço por quinta:
+
+1. Criar `UserService` e mover lógica do controller  
+2. Injeção por construtor  
+3. `orElseThrow` + 404  
+4. PUT / DELETE  
+5. DTOs  
+6. `@Transactional` no service  
+
+**Regra:** 1 objetivo pequeno por quinta + commit no fim (mesmo que incompleto: `wip:`).
+
+**Noite:** off (academia).
+
+---
+
+### Sexta — Angular no trabalho + revisão da semana
+
+**06:15–07:50**
+
+| Semana ímpar | Semana par |
+|--------------|------------|
+| Angular: 1 conceito (componentes, services, RxJS básico, HTTP client, rotas) | Revisão: reler áudios/anotações Seg–Qui + refazer 5 perguntas que falhou |
+
+**Por quê Angular na sexta:** você usa no trabalho; 1 conceito/semana vira resposta de entrevista full-stack sem comer o foco do backend.
+
+**Noite:** off. Se sobrar energia, **só** listar no `GAPS.md` dúvidas da semana.
+
+---
+
+### Sábado — bloco longo de projeto
+
+**10:30–12:00** (depois do futebol e de comer / tomar banho)
+
+- Continuar o que começou na quinta no `api_rest`
+- Ou README / teste / Docker quando chegar nessa etapa
+- Fechar com: commit + 5 linhas “o que aprendi hoje”
+
+**Tarde/noite:** livre (descanso de verdade).
+
+---
+
+### Domingo — modo entrevista
+
+**45–60 min** (ex.: 09:00–10:00)
+
+1. 6–8 perguntas aleatórias (fundamentos + o que errou na entrevista)
+2. Responder em voz alta com cronômetro (2 min cada)
+3. Anotar o que travou → vira tema da **segunda**
+4. **Não** abrir IDE (exceto se for mostrar um trecho de 5 min)
+
+---
+
+## Resumo visual da semana
 
 ```
-Controller  →  recebe HTTP, devolve resposta
-Service     →  regra de negócio + @Transactional
-Repository  →  acesso a dados (JPA)
-Entity      →  mapeia tabela
-DTO         →  o que entra/sai da API (não expor Entity direto)
+SEG  06:15  Spring / entrevista (teoria + falar)
+TER  06:15  Java (teoria + exercício curto)
+QUA  06:15  SQL/PLSQL → conceito + ligação com JPA
+     noite  futebol ❌ sem estudo
+QUI  06:15  Código api_rest (1 tarefa)
+SEX  06:15  Angular OU revisão da semana
+SÁB  10:30  Projeto 90 min
+DOM  09:00  Simulado de entrevista 45–60 min
+
+Noites com academia (seg/ter/qui/sex): no máximo flashcard 15 min ou dormir.
 ```
 
-**Temas**
-- Injeção de dependência (construtor > `@Autowired` no campo)
-- CRUD completo: GET, POST, PUT, DELETE
-- `@Transactional` e `readOnly = true` (você já começou — continue aplicando)
-- Validação: `@Valid`, `@NotBlank`, `@Email`
-- Exception handler global (`@ControllerAdvice`)
-- Relacionamentos JPA + cuidado com lazy loading / N+1
-- Paginação e ordenação (`Pageable`)
-- Testes: `@SpringBootTest` vs `@WebMvcTest` vs teste de Service unitário
-
-**Checklist de saída da Fase B**
-- [ ] Explico por que Service existe
-- [ ] Explico `@Transactional` com exemplo de 2 saves atômicos
-- [ ] API devolve 404/400 corretos
-- [ ] Tenho pelo menos 3 testes passando
+**Total estimado:** ~7,5 h/semana.
 
 ---
 
-### Fase C — Nível entrevista júnior+ / pleno inicial (3–4 semanas)
+## Método de fixação (em todo tema)
 
-- Spring Security básico (JWT ou Basic) — autenticação vs autorização
-- Migrations com Flyway ou Liquibase (parar de depender só de `ddl-auto=update`)
-- Docker Compose (app + Postgres)
-- Logs e tratamento de erros com mensagem clara
-- Documentação OpenAPI/Swagger
-- Cache simples / performance (conceito)
-- Mensageria (conceito: fila, evento) — overview, não deep dive
+1. Explicar em voz alta em ~2 min  
+2. Escrever 5–8 linhas com suas palavras  
+3. Aplicar no código (quinta/sábado) quando for tema de Spring/Java  
+4. Commit quando houver mudança no repo  
 
-**Checklist de saída da Fase C**
-- [ ] Demo local sobe com `docker compose up`
-- [ ] Endpoint protegido + um público
-- [ ] README explica como rodar em 5 minutos
-- [ ] Consigo defender decisões técnicas em entrevista
+Se não explica sem olhar → ainda não fixou → repete na segunda.
 
 ---
 
-## 3. Projetos (evolução, não reinventar a roda)
+## Diagnóstico (preencher e atualizar)
 
-Use **este repositório** como base. Um projeto bem documentado vale mais que cinco tutoriais incompletos.
+| Pergunta | Consegui? | Prioridade |
+|----------|-----------|------------|
+| **Spring × Spring Boot** | **não (entrevista)** | **P0** |
+| DI / IoC / Bean | | P0 |
+| `@SpringBootApplication` | | P0 |
+| Controller × Service × Repository | | P0 |
+| API REST + status HTTP | | P1 |
+| `@Transactional` / ACID | | P1 |
+| JPA × Hibernate × Spring Data | | P1 |
+| SQL JOIN / índice / transação | | P1 (você usa — foque em explicar) |
+| Angular: module/component/service | | P2 |
+| DTO, validação, 404 | | P2 |
 
-### Projeto 1 — `api_rest` profissional (base atual)
-
-**Objetivo:** transformar o CRUD básico em API de portfólio.
-
-Entregas:
-1. Camada `service` + DTOs de request/response
-2. CRUD completo de `User` e `Department`
-3. Validação + `@ControllerAdvice`
-4. `@Transactional` nos use cases que alteram dados
-5. Tratamento de `Optional` (sem `.get()` sem checagem)
-6. Testes de Service e Controller
-7. README: como subir Postgres + rodar a API
-8. (Opcional) Docker Compose
-
-**Critério de pronto:** alguém clona, segue o README e testa no Postman/Insomnia.
+Detalhes: `GAPS.md` · respostas-modelo: `ENTREVISTA_FUNDAMENTOS.md` · tarefas de código: `PROJETOS.md`
 
 ---
 
-### Projeto 2 — Domínio com regra de negócio (novo módulo ou repo)
+## Mapa de fases (continua valendo)
 
-Sugestão: **gestão de tarefas / pedidos / biblioteca**
+### Fase A — falar o básico sem travar (~2–3 semanas nesta rotina)
 
-Regras obrigatórias (para forçar transação + domínio):
-- Criar recurso com validação
-- Mudança de status (ex.: `OPEN → IN_PROGRESS → DONE`)
-- Operação que toca **duas tabelas** na mesma transação
-- Histórico ou auditoria simples (`createdAt`, `updatedAt`)
+Spring × Boot, DI, camadas, REST, Java OOP básico, SQL que você já usa mas explica mal.
 
-Isso fixa o que entrevista cobra: regra de negócio + consistência.
+### Fase B — Spring “de verdade” no `api_rest` (~3–4 semanas)
 
----
+Service, DTO, CRUD completo, `@Transactional`, validação, exception handler, testes.
 
-### Projeto 3 — API “pronta para time”
+### Fase C — portfólio / júnior+ (~3–4 semanas)
 
-Em cima do Projeto 1 ou 2:
-- Auth JWT
-- Flyway
-- Swagger
-- CI simples (GitHub Actions: `./mvnw test`)
-- Paginação em listagens
+Docker, Flyway, Swagger, Security básico, CI.
 
-**Critério de pronto:** você consegue gravar um vídeo de 5–8 min explicando a arquitetura.
+Não pule a Fase A: a entrevista mostrou que o buraco está no **conceito**, não só no código.
 
 ---
 
-## 4. Preparação de entrevista (paralelo a partir da semana 2)
+## Primeira semana (calendário concreto)
 
-### Banco de perguntas (pratique em voz alta)
+Assuma que “semana 1” começa na **próxima segunda**. Ajuste as datas se começar no meio da semana (pule o que já passou e continue a ordem).
 
-**Java / OOP**
-- Diferença entre `==` e `equals`
-- `ArrayList` vs `LinkedList` vs `HashMap`
-- O que é imutabilidade
-- O que é `Optional` e quando usar
+| Dia | Horário | Conteúdo exato |
+|-----|---------|----------------|
+| **Seg** | 06:15–07:50 | Spring × Spring Boot — ler, gravar áudio, escrever 8 linhas |
+| **Ter** | 06:15–07:50 | Java: `==` vs `equals` + `Optional` (ligar ao `.get()` do seu `UserController`) |
+| **Qua** | 06:15–07:50 | SQL: o que é JOIN + PK/FK; relacionar com `User`/`Department` do projeto |
+| **Qui** | 06:15–07:50 | Código: criar `UserService` e mover `findAll` / `findById` / `save` do controller |
+| **Sex** | 06:15–07:50 | Revisar áudios Seg–Qui + 5 perguntas de `ENTREVISTA_FUNDAMENTOS.md` |
+| **Sáb** | 10:30–12:00 | Código: PUT + DELETE + `orElseThrow` no service |
+| **Dom** | 45–60 min | Simulado: Spring×Boot, DI, camadas, equals, JOIN, REST |
 
-**Spring**
-- Ciclo de uma request no Spring MVC
-- Diferença entre `@Component`, `@Service`, `@Repository`
-- O que o Spring Data JPA gera automaticamente
-- O que acontece se uma RuntimeException cair dentro de `@Transactional`
-
-**SQL / JPA**
-- Lazy vs Eager — prós e contras
-- O que é N+1 e como evitar (`join fetch` / `@EntityGraph`)
-- Diferença entre `persist`, `merge`, `save` (visão prática)
-
-**Comportamental**
-- Conte a entrevista de ontem como aprendizado (honestidade + plano)
-- “Me fala de um bug que você resolveu”
-- “Como você estuda / evolui”
-
-### Formato de simulação (domingo)
-1. Pegue 5 perguntas
-2. Responda em voz alta (cronômetro 2 min)
-3. Anote o que travou
-4. Estude só aquilo na segunda
+No fim do domingo: atualizar `GAPS.md` com o que ainda falhou.
 
 ---
 
-## 5. Recursos (poucos e bons)
+## Segunda semana (próximo ciclo)
 
-Não acumule curso. Escolha **um** por tema.
-
-| Tema | Recurso sugerido |
-|------|------------------|
-| Java | Documentação oficial + exercícios (HackerRank / LeetCode Easy só Collections/Strings) |
-| Spring Boot | Docs Spring + guias oficiais “Building a RESTful Web Service” |
-| JPA | Baeldung (artigos pontuais: Transactional, LazyLoading, DTO) |
-| SQL | Mode SQL Tutorial ou similar — prática diária 15 min |
-| Entrevista | Anotar perguntas reais que te fizeram e montar flashcards |
-
-Regra: **1 artigo → 1 commit no projeto** no mesmo dia.
+| Dia | Conteúdo |
+|-----|----------|
+| Seg | DI / IoC / Bean + `@Autowired` vs construtor |
+| Ter | Collections: `List` × `Map` + 1 exercício |
+| Qua | Transação no banco (ACID) + SQL × PLSQL (1 diferença clara) |
+| Qui | Código: DTOs `UserRequest` / `UserResponse` |
+| Sex | Angular: o que é Service no Angular × Service no Spring (comparar) |
+| Sáb | `@Transactional` no `UserService` + README mínimo |
+| Dom | Simulado 8 perguntas (incluir Angular 1 pergunta) |
 
 ---
 
-## 6. Como medir progresso (a cada 2 semanas)
+## Como usar o trabalho a favor (08:00–18:00)
 
-Responda com sim/não:
+Sem estudar “escondido” o dia todo. Só:
 
-- [ ] Consigo explicar meu último commit em 3 minutos
-- [ ] Minha API tem Service + DTO + erros tratados
-- [ ] Tenho testes automatizados
-- [ ] README permite outra pessoa rodar
-- [ ] Fiz 1 simulação de entrevista
-- [ ] Reduzi pelo menos 2 itens vermelhos do `GAPS.md`
-
-Se 4+ forem “sim”, você está evoluindo de verdade — independente do resultado de ontem.
+- Quando mexer em Spring/SQL/Angular, pergunte: *“Se me perguntassem isso na entrevista, eu explicaria?”*
+- Se não → 1 linha no `GAPS.md` no celular
+- No dia certo da grade (seg/ter/qua/sex), isso vira o tema
 
 ---
 
-## 7. Próximos 7 dias (plano imediato)
+## Medir progresso (a cada 2 semanas)
 
-| Dia | Ação concreta |
-|-----|----------------|
-| 1 | Preencher `GAPS.md` + treinar **Spring × Spring Boot** em voz alta (2x) — `ENTREVISTA_FUNDAMENTOS.md` |
-| 2 | Flashcards 2–5 (DI, `@SpringBootApplication`, camadas, MVC vs Data) |
-| 3 | Flashcards 6–10 + anotar outras perguntas da entrevista no `GAPS.md` |
-| 4 | Estudar camadas + criar `UserService` e mover a lógica do controller |
-| 5 | Trocar `.get()` por `orElseThrow` + PUT/DELETE |
-| 6 | Revisar `@Transactional` e aplicar no Service |
-| 7 | Simular 8 perguntas básicas em voz alta (cronômetro) + 1 commit no código |
+- [ ] Explico Spring × Boot sem olhar  
+- [ ] Explico DI + camadas Controller/Service/Repository  
+- [ ] `UserService` existe no repo  
+- [ ] Fiz 2 simulados de domingo  
+- [ ] Academia + futebol mantidos (plano sustentável)  
+- [ ] Sono ok na maioria dos dias  
+
+Se o plano competir com sono ou academia, **corte a noite**, nunca a manhã.
 
 ---
 
 ## Mentalidade
 
-Uma entrevista ruim é **dado**, não sentença.  
-O que diferencia quem evolui: transformar vergonha em lista de estudo e **código commitado**.
+Você não tem “falta de tempo” — tem **uma janela boa** (06:15–07:50) e um bloco de sábado.  
+Com 7h/semana bem usadas, em 1–2 meses a entrevista básica para de te derrubar.
 
-Quando travar de novo, pergunte aqui com o tema exato (ex.: “lazy loading”, “JWT”, “teste do service”) — a gente aprofunda e aplica neste repo.
+Quando quiser, me passa as **outras perguntas** que caíram na entrevista que eu encaixo na grade do dia certo.

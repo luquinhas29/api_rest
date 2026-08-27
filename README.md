@@ -18,7 +18,7 @@ Em evolução: camadas Service/DTO, validação, testes e Docker — ver [PROJET
 
 ## Plano de evolução
 
-- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — rotina, fases e preparação de entrevista
+- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — grade diária (06:15 no trabalho, sáb 10:30, dom simulado)
 - [ENTREVISTA_FUNDAMENTOS.md](./ENTREVISTA_FUNDAMENTOS.md) — flashcards (Spring × Boot, DI, camadas…)
 - [PROJETOS.md](./PROJETOS.md) — etapas concretas neste repositório
 - [GAPS.md](./GAPS.md) — lacunas da última entrevista (preencher)
