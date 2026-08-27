@@ -1,0 +1,50 @@
+# api_rest
+
+API REST em **Spring Boot 3** + **JPA** + **PostgreSQL**.
+
+Projeto de estudo de [Lucas Williams](https://github.com/luquinhas29) — parte da **Trilha A** (Java/Spring).
+
+## Stack
+
+- Java 17
+- Spring Boot 3.2
+- Spring Data JPA
+- PostgreSQL
+
+## Estado atual
+
+CRUD inicial de `User` e `Department` (ManyToOne).  
+Em evolução: Service/DTO, validação, testes, Docker — ver [PROJETOS.md](./PROJETOS.md).
+
+## Plano de evolução (multi-trilha)
+
+- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — rotina + blocos (Java · Angular · PLSQL · panorama)
+- [FUNDAMENTOS_SPRING.md](./FUNDAMENTOS_SPRING.md) — Bloco A
+- [FUNDAMENTOS_ANGULAR.md](./FUNDAMENTOS_ANGULAR.md) — Bloco B
+- [FUNDAMENTOS_PLSQL.md](./FUNDAMENTOS_PLSQL.md) — Bloco C
+- [PANORAMA.md](./PANORAMA.md) — Bloco D (Docker / microsserviços / AWS)
+- [PROJETOS.md](./PROJETOS.md) — práticas e labs
+- [CADERNO.md](./CADERNO.md) — registro do que está estudando
+
+## Como rodar (local)
+
+1. Suba um PostgreSQL e crie o banco `DB_API_REST`
+2. Ajuste usuário/senha em `src/main/resources/application.properties`
+3. Execute:
+
+```bash
+./mvnw spring-boot:run
+```
+
+### Endpoints atuais
+
+| Método | Path | Descrição |
+|--------|------|-----------|
+| GET | `/users` | Lista usuários |
+| GET | `/users/{id}` | Busca por id |
+| POST | `/users` | Cria usuário |
+
+## Próximo passo
+
+**Começo: domingo 30/08/2026** — kickoff do Bloco A (Java/Spring).  
+Detalhe do dia a dia: seção *Começo combinado* em [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md).
