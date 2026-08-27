@@ -91,6 +91,37 @@ DOM      consolidar
 
 ---
 
+## Começo combinado — a partir de domingo 30/08/2026
+
+**Bloco ativo:** A — Java / Spring (Semana A1)
+
+### Domingo 30/08 — kickoff (45–60 min)
+
+Não é dia pesado de conteúdo novo. É alinhar o ciclo:
+
+1. Abrir `CADERNO.md` → marcar bloco **A**, meta: *“entender Spring/Boot e organizar a api_rest em camadas”*
+2. Ler só o item **1** de `FUNDAMENTOS_SPRING.md` (Spring × Spring Boot)
+3. Escrever **8 linhas com suas palavras** no caderno ou num arquivo de notas
+4. Olhar de relance a Semana A1 abaixo (sem codar ainda)
+5. Dormir cedo — segunda 06:15 é o primeiro estudo “de verdade”
+
+### Semana A1 (31/08 → 06/09)
+
+| Dia | Data | Horário | O que fazer |
+|-----|------|---------|-------------|
+| **Seg** | 31/08 | 06:15–07:50 | Spring × Spring Boot — ler, explicar em voz alta, 8 linhas |
+| **Ter** | 01/09 | 06:15–07:50 | DI / IoC / Bean |
+| **Qua** | 02/09 | 06:15–07:50 | Camadas Controller × Service × Repository |
+| **Qui** | 03/09 | 06:15–07:50 | Código: criar `UserService` e mover findAll/findById/save |
+| **Sex** | 04/09 | 06:15–07:50 | Revisar Seg–Qui (só Bloco A) |
+| **Sáb** | 05/09 | 10:30–12:00 | Código: `orElseThrow` + PUT + DELETE |
+| **Dom** | 06/09 | 45–60 min | Consolidar caderno + decidir se repete algo ou segue A2 |
+
+Materiais: `FUNDAMENTOS_SPRING.md` · `PROJETOS.md` (Etapa 1) · `CADERNO.md`
+
+Na segunda-feira (31/08), se quiser, me chama que a gente faz o Spring × Boot junto ou já parte pro `UserService` na quinta.
+---
+
 ## Bloco A — Java / Spring (profundo · 2 semanas)
 
 Materiais: `FUNDAMENTOS_SPRING.md` · projeto: `PROJETOS.md`

@@ -46,4 +46,5 @@ Em evolução: Service/DTO, validação, testes, Docker — ver [PROJETOS.md](./
 
 ## Próximo passo
 
-Ativar o bloco no `CADERNO.md` e seguir a semana correspondente no plano.
+**Começo: domingo 30/08/2026** — kickoff do Bloco A (Java/Spring).  
+Detalhe do dia a dia: seção *Começo combinado* em [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md).
