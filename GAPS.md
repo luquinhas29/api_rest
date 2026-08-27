@@ -23,11 +23,11 @@ Empresa / tipo de vaga: _______________
 
 ## Top 3 prioridades desta semana
 
-1. **Seg 06:15** — Spring × Boot em voz alta (`ENTREVISTA_FUNDAMENTOS.md`)
-2. Preencher o resto desta tabela com outras perguntas da entrevista
-3. **Qui 06:15 + Sáb 10:30** — Etapa 1 do `PROJETOS.md` (`UserService`)
+1. **Bloco 1:** Spring/Java vários dias seguidos (não misturar Angular ainda)
+2. Seg–Qua 06:15 — Spring×Boot → DI → camadas (`ENTREVISTA_FUNDAMENTOS.md`)
+3. Qui + Sáb — `UserService` no `api_rest`
 
-Rotina completa: `PLANO_DE_ESTUDOS.md` (grade Seg–Dom).
+Rotina: `PLANO_DE_ESTUDOS.md` (estratégia = bloco de foco).
 
 ## Observações emocionais (opcional)
 
