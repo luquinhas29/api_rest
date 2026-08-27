@@ -1,6 +1,6 @@
 # Panorama — Docker, microsserviços, AWS (e afins)
 
-> Material do **Bloco C** (1 semana por tema).  
+> Material do **Bloco D** (1 semana por tema).  
 > Objetivo: **mapa + lab mínimo**, não especialização.
 
 Marque só o tema da semana ativa.

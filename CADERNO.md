@@ -1,12 +1,13 @@
 # Caderno de evolução
 
-> Registro pessoal do que está aprendendo — **não** é checklist de entrevista.
+> Registro pessoal do que está aprendendo.
 
 ## Bloco ativo agora
 
 - [ ] A — Java / Spring  
-- [ ] B — SQL / PLSQL  
-- [ ] C — Panorama (Docker / AWS / microsserviços / outro: ______)
+- [ ] B — Angular  
+- [ ] C — SQL / PLSQL  
+- [ ] D — Panorama (Docker / AWS / microsserviços / outro: ______)
 
 Início do bloco: _______________  
 Meta do bloco (1 frase): _______________
@@ -25,13 +26,13 @@ Meta do bloco (1 frase): _______________
 
 ## Dúvidas que surgiram no trabalho
 
-| Data | Assunto | Bloco (A/B/C) | Resolvido? |
-|------|---------|---------------|------------|
+| Data | Assunto | Bloco (A/B/C/D) | Resolvido? |
+|------|---------|-----------------|------------|
 | | Spring × Boot | A | em andamento |
 | | | | |
 | | | | |
 
-## Temas que quero no panorama (C)
+## Temas que quero no panorama (D)
 
 - [ ] Docker  
 - [ ] Microsserviços  
@@ -42,7 +43,7 @@ Meta do bloco (1 frase): _______________
 
 ## Artefatos (prova de evolução)
 
-| Data | O que produzi (commit, script, lab, nota) |
-|------|-------------------------------------------|
+| Data | O que produzi (commit, tela Angular, script, lab, nota) |
+|------|--------------------------------------------------------|
 | | |
 | | |

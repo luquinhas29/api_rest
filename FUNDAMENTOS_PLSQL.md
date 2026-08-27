@@ -1,6 +1,6 @@
 # Fundamentos — SQL / PLSQL
 
-> Material do **Bloco B**.  
+> Material do **Bloco C**.  
 > Pratique em scripts seus (Oracle ou ambiente de estudo). **Não** versionar dado sensível do trabalho.
 
 Sugestão: criar pasta `estudo-plsql/` neste repo ou repo separado só de scripts.

@@ -18,10 +18,11 @@ Em evolução: Service/DTO, validação, testes, Docker — ver [PROJETOS.md](./
 
 ## Plano de evolução (multi-trilha)
 
-- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — rotina + blocos (Java/Spring · PLSQL · panorama)
+- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — rotina + blocos (Java · Angular · PLSQL · panorama)
 - [FUNDAMENTOS_SPRING.md](./FUNDAMENTOS_SPRING.md) — Bloco A
-- [FUNDAMENTOS_PLSQL.md](./FUNDAMENTOS_PLSQL.md) — Bloco B
-- [PANORAMA.md](./PANORAMA.md) — Docker / microsserviços / AWS
+- [FUNDAMENTOS_ANGULAR.md](./FUNDAMENTOS_ANGULAR.md) — Bloco B
+- [FUNDAMENTOS_PLSQL.md](./FUNDAMENTOS_PLSQL.md) — Bloco C
+- [PANORAMA.md](./PANORAMA.md) — Bloco D (Docker / microsserviços / AWS)
 - [PROJETOS.md](./PROJETOS.md) — práticas e labs
 - [CADERNO.md](./CADERNO.md) — registro do que está estudando
 

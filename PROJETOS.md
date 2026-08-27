@@ -38,7 +38,7 @@ controllers · services · repositories · entities · dto · exceptions
 
 ### Etapa 4 — Empacotar / operar
 
-- [ ] `docker-compose.yml` (encaixa no Bloco C Docker)
+- [ ] `docker-compose.yml` (encaixa no Bloco D Docker)
 - [ ] Flyway
 - [ ] OpenAPI/Swagger
 - [ ] README completo
@@ -49,7 +49,20 @@ Domínio com status (`TODO` → `DOING` → `DONE`) + regra no Service + pagina�
 
 ---
 
-## Trilha B — SQL / PLSQL
+## Trilha B — Angular
+
+App de estudo separado **ou** exercício mínimo (sem código do trabalho).
+
+- [ ] 1 component de listagem
+- [ ] 1 service com `HttpClient` (mock ou `api_rest`)
+- [ ] 2 rotas navegáveis
+- [ ] 1 formulário com validação
+- [ ] README: como subir o front e apontar pra API
+- [ ] (Depois) consumir CRUD completo da `api_rest`
+
+---
+
+## Trilha C — SQL / PLSQL
 
 Pasta sugerida: `estudo-plsql/` (só scripts de estudo).
 
@@ -66,7 +79,7 @@ Sem dado real de produção/cliente.
 
 ---
 
-## Trilha C — Labs de panorama
+## Trilha D — Labs de panorama
 
 Siga `PANORAMA.md` na semana do tema:
 

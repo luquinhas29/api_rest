@@ -40,7 +40,7 @@ Você pediu profundidade **e** assuntos mais amplos. Isso pede dois modos:
 
 | Modo | Para quê | Como estudar | Duração típica |
 |------|----------|--------------|----------------|
-| **Profundo** | Java/Spring, PLSQL | Ler → anotar → **aplicar** (código/script) → revisar | 2 semanas por bloco |
+| **Profundo** | Java/Spring, **Angular**, PLSQL | Ler → anotar → **aplicar** (código/script) → revisar | 2 semanas por bloco |
 | **Panorama** | Microsserviços, Docker, AWS, etc. | Conceito + desenho + lab mínimo (subir algo / console) | **1 semana** por tema |
 
 Regra: panorama **não** compete com profundo no mesmo dia. É um bloco separado no ciclo.
@@ -55,14 +55,15 @@ Ordem sugerida do **ciclo** (repete e aprofunda):
 
 | Ordem | Bloco | Modo | Semanas |
 |-------|-------|------|---------|
-| 1 | **Java + Spring** (+ projeto `api_rest`) | Profundo | 2 |
-| 2 | **SQL / PLSQL** | Profundo | 2 |
-| 3 | **Panorama** (Docker **ou** AWS **ou** microsserviços — um por vez) | Panorama | 1 |
-| — | Volta ao 1 ou 2 com tema mais avançado | — | — |
+| 1 | **A — Java + Spring** (+ `api_rest`) | Profundo | 2 |
+| 2 | **B — Angular** | Profundo | 2 |
+| 3 | **C — SQL / PLSQL** | Profundo | 2 |
+| 4 | **D — Panorama** (Docker **ou** AWS **ou** microsserviços — um por vez) | Panorama | 1 |
+| — | Volta ao A/B/C com tema mais avançado | — | — |
 
-Angular: você já pratica no trabalho. Só vira bloco próprio se quiser (depois de 1–2 ciclos), ou 1 domingo de consolidação do que usou na semana.
+Por que Angular depois de Java/Spring: você conecta front ↔ API com mais clareza. Pode inverter B e C se no trabalho o PLSQL estiver mais urgente.
 
-**Critério pra trocar de bloco:** consegue explicar o checklist do bloco com suas palavras **e** tem um artefato (commit, script `.sql`, nota + lab). Não precisa “terminar a tecnologia”.
+**Critério pra trocar de bloco:** consegue explicar o checklist do bloco com suas palavras **e** tem um artefato (commit, tela Angular, script `.sql`, lab). Não precisa “terminar a tecnologia”.
 
 ---
 
@@ -75,10 +76,10 @@ Horários fixos; o **conteúdo** vem do bloco ativo.
 | Seg | 06:15–07:50 | Conceito 1 do bloco |
 | Ter | 06:15–07:50 | Conceito 2 (mesmo bloco) |
 | Qua | 06:15–07:50 | Conceito 3 ou exercício curto |
-| Qui | 06:15–07:50 | **Aplicar** (código Java **ou** script PLSQL **ou** lab Docker/AWS) |
+| Qui | 06:15–07:50 | **Aplicar** (Java · Angular · PLSQL · lab panorama) |
 | Sex | 06:15–07:50 | Revisar a semana (só o bloco atual) |
 | Sáb | 10:30–12:00 | Bloco longo de prática / projeto |
-| Dom | 45–60 min | Consolidar: reler notas, completar `CADERNO.md`, escolher próximo tema do bloco |
+| Dom | 45–60 min | Consolidar: notas + `CADERNO.md` |
 
 ```
 SEG–QUA  conceito (mesmo bloco)
@@ -118,16 +119,48 @@ Materiais: `FUNDAMENTOS_SPRING.md` · projeto: `PROJETOS.md`
 | Sáb | `@Transactional` no service + README |
 | Dom | Checklist A e anotar dúvidas no `CADERNO.md` |
 
-**Próximos ciclos A (exemplos):** validação, exception handler, testes, JPA lazy/N+1, paginação, Security básico.
+**Próximos ciclos A:** validação, exception handler, testes, JPA lazy/N+1, paginação, Security básico.
 
 ---
 
-## Bloco B — SQL / PLSQL (profundo · 2 semanas)
+## Bloco B — Angular (profundo · 2 semanas)
+
+Materiais: `FUNDAMENTOS_ANGULAR.md` · prática: app de estudo **ou** extrair padrão do que você faz no trabalho (sem código proprietário)
+
+### Semana B1 — esqueleto do Angular
+
+| Dia | Tema |
+|-----|------|
+| Seg | O que é Angular (SPA) × página clássica; papel do TypeScript |
+| Ter | Component: template, class, style; data binding |
+| Qua | Modules / standalone components (conforme a versão que você usa) |
+| Qui | Criar (ou isolar) 1 component simples na prática |
+| Sex | Revisar B1 |
+| Sáb | Services + injeção no Angular; 1 service de exemplo |
+| Dom | Consolidar + anotar dúvidas do trabalho no caderno |
+
+### Semana B2 — falar com API e rotas
+
+| Dia | Tema |
+|-----|------|
+| Seg | `HttpClient`: GET/POST; Observable (ideia prática) |
+| Ter | RxJS no dia a dia: `subscribe`, `async` pipe, `map`/`tap` (básico) |
+| Qua | Rotas: `RouterModule` / `provideRouter`, params |
+| Qui | Tela que lista dados de uma API (pode ser mock ou sua `api_rest`) |
+| Sex | Revisar B2 |
+| Sáb | Forms (template-driven **ou** reactive — um dos dois) + validação simples |
+| Dom | Consolidar: desenhar fluxo Component → Service → HTTP → Spring |
+
+**Próximos ciclos B:** interceptors, guards, state simples, performance (`OnPush`), signals (se a versão tiver), testes de component.
+
+---
+
+## Bloco C — SQL / PLSQL (profundo · 2 semanas)
 
 Material: `FUNDAMENTOS_PLSQL.md`  
 Prática: pasta sugerida `estudo-plsql/` (scripts seus, **sem dado sensível do trabalho**)
 
-### Semana B1 — SQL sólido
+### Semana C1 — SQL sólido
 
 | Dia | Tema |
 |-----|------|
@@ -139,7 +172,7 @@ Prática: pasta sugerida `estudo-plsql/` (scripts seus, **sem dado sensível do 
 | Sáb | Índices + PK/FK (conceito + quando ajuda) |
 | Dom | Consolidar |
 
-### Semana B2 — PLSQL de verdade
+### Semana C2 — PLSQL de verdade
 
 | Dia | Tema |
 |-----|------|
@@ -147,24 +180,24 @@ Prática: pasta sugerida `estudo-plsql/` (scripts seus, **sem dado sensível do 
 | Ter | Procedures × Functions |
 | Qua | Cursors (explícito) — ideia e 1 exemplo |
 | Qui | Escrever procedure simples (insert/update + tratamento) |
-| Sex | Revisar B2 |
+| Sex | Revisar C2 |
 | Sáb | Package (spec + body) mínimo **ou** trigger simples |
 | Dom | Consolidar + ligar: “quando eu usaria isso no Java/Spring?” |
 
-**Próximos ciclos B:** bulk collect, collections PLSQL, performance básica, dynamic SQL (com cuidado), padrões do seu time.
+**Próximos ciclos C:** bulk collect, collections PLSQL, performance básica, dynamic SQL (com cuidado), padrões do seu time.
 
 ---
 
-## Bloco C — Panorama (superficial mas útil · 1 semana cada)
+## Bloco D — Panorama (superficial mas útil · 1 semana cada)
 
 Material: `PANORAMA.md`  
 Meta: **mapa mental + 1 lab mínimo**, não virar especialista na semana.
 
-Rodízio sugerido (um tema por vez no slot C):
+Rodízio sugerido (um tema por vez no slot D):
 
 1. **Docker**  
 2. **Microsserviços** (conceitos)  
-3. **AWS** (visão: o que é VPC, EC2, S3, RDS, IAM — nível mapa)  
+3. **AWS** (visão: VPC, EC2, S3, RDS, IAM — nível mapa)  
 4. Depois: Kubernetes (só ideia), mensageria (fila), CI/CD, etc.
 
 ### Exemplo — semana Docker
@@ -197,9 +230,10 @@ Use `CADERNO.md` (não é lista de entrevista):
 - O que ainda não explica bem
 - Ideias do trabalho pra estudar no bloco certo
 
-A cada 2 ciclos (~2 meses):
+A cada 2 ciclos (~2–3 meses):
 
 - [ ] `api_rest` ganhou camadas Service/DTO
+- [ ] Tenho um exercício Angular meu (component + service + HTTP)
 - [ ] Tenho scripts PLSQL meus versionados
 - [ ] Já fiz pelo menos 1 lab Docker e 1 panorama AWS ou microsserviços
 - [ ] Consigo ensinar o último bloco a alguém em 10 min
@@ -208,7 +242,7 @@ A cada 2 ciclos (~2 meses):
 
 ## Trabalho (08:00–18:00) a favor
 
-- Angular/SQL/Java no expediente = prática diária
+- Angular/SQL/Java no expediente = prática diária (ótimo input pro caderno)
 - Se aparecer algo do **bloco ativo** e você não dominar → 1 linha no caderno → estuda na manhã
 - Se for de outro bloco → anota e espera o bloco daquela tech (evita pular de galho)
 
@@ -217,7 +251,7 @@ A cada 2 ciclos (~2 meses):
 ## Mentalidade
 
 Evoluir ≠ estudar tudo todo dia.  
-É **profundidade em rodízio** + **panorama curto** pra não ficar só no CRUD eterno.
+É **profundidade em rodízio** (Java · Angular · PLSQL) + **panorama curto**.
 
 Horários e futebol/academia ficam; o que muda é o bloco ativo.  
-Quando terminar um bloco, diga qual quer puxar (A, B ou C) que montamos a semana seguinte no detalhe.
+Quando terminar um bloco, diga qual quer puxar (**A, B, C ou D**) que montamos a semana seguinte no detalhe.
