@@ -15,6 +15,9 @@ Escreva em um caderno ou arquivo `GAPS.md` (só para você):
 
 | Pergunta | Consegui explicar / fazer? | Prioridade |
 |----------|----------------------------|------------|
+| **Spring × Spring Boot** | **não (entrevista)** | **P0 — já** |
+| O que é DI / IoC / Bean | | **P0** |
+| O que faz `@SpringBootApplication` | | **P0** |
 | O que é uma API REST? | | |
 | Controller × Service × Repository | | |
 | O que é `@Transactional` e ACID? | | |
@@ -27,7 +30,8 @@ Escreva em um caderno ou arquivo `GAPS.md` (só para você):
 | Collections, equals/hashCode, Streams | | |
 | Git: branch, commit, PR | | |
 
-Marque **vermelho** o que falhou na entrevista → isso entra primeiro.
+Marque **vermelho** o que falhou na entrevista → isso entra primeiro.  
+Respostas-modelo das básicas: [`ENTREVISTA_FUNDAMENTOS.md`](./ENTREVISTA_FUNDAMENTOS.md).
 
 ---
 
@@ -249,13 +253,13 @@ Se 4+ forem “sim”, você está evoluindo de verdade — independente do resu
 
 | Dia | Ação concreta |
 |-----|----------------|
-| 1 | Preencher `GAPS.md` com o que travou na entrevista |
-| 2 | Estudar camadas Controller/Service/Repository + desenhar no papel o fluxo do `POST /users` |
-| 3 | Criar `UserService` e mover a lógica do controller |
-| 4 | Trocar `.get()` por `orElseThrow` + exception 404 |
-| 5 | Adicionar PUT e DELETE |
-| 6 | Estudar `@Transactional` de novo e aplicar no Service (você já tem base) |
-| 7 | Escrever README + 1 teste + simular 5 perguntas em voz alta |
+| 1 | Preencher `GAPS.md` + treinar **Spring × Spring Boot** em voz alta (2x) — `ENTREVISTA_FUNDAMENTOS.md` |
+| 2 | Flashcards 2–5 (DI, `@SpringBootApplication`, camadas, MVC vs Data) |
+| 3 | Flashcards 6–10 + anotar outras perguntas da entrevista no `GAPS.md` |
+| 4 | Estudar camadas + criar `UserService` e mover a lógica do controller |
+| 5 | Trocar `.get()` por `orElseThrow` + PUT/DELETE |
+| 6 | Revisar `@Transactional` e aplicar no Service |
+| 7 | Simular 8 perguntas básicas em voz alta (cronômetro) + 1 commit no código |
 
 ---
 
