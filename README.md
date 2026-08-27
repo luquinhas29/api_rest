@@ -2,7 +2,7 @@
 
 API REST em **Spring Boot 3** + **JPA** + **PostgreSQL**.
 
-Projeto de estudo e portfólio de [Lucas Williams](https://github.com/luquinhas29).
+Projeto de estudo de [Lucas Williams](https://github.com/luquinhas29) — parte da **Trilha A** (Java/Spring).
 
 ## Stack
 
@@ -13,15 +13,17 @@ Projeto de estudo e portfólio de [Lucas Williams](https://github.com/luquinhas2
 
 ## Estado atual
 
-CRUD inicial de `User` e entidade `Department` (ManyToOne).  
-Em evolução: camadas Service/DTO, validação, testes e Docker — ver [PROJETOS.md](./PROJETOS.md).
+CRUD inicial de `User` e `Department` (ManyToOne).  
+Em evolução: Service/DTO, validação, testes, Docker — ver [PROJETOS.md](./PROJETOS.md).
 
-## Plano de evolução
+## Plano de evolução (multi-trilha)
 
-- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — grade diária (06:15 no trabalho, sáb 10:30, dom simulado)
-- [ENTREVISTA_FUNDAMENTOS.md](./ENTREVISTA_FUNDAMENTOS.md) — flashcards (Spring × Boot, DI, camadas…)
-- [PROJETOS.md](./PROJETOS.md) — etapas concretas neste repositório
-- [GAPS.md](./GAPS.md) — lacunas da última entrevista (preencher)
+- [PLANO_DE_ESTUDOS.md](./PLANO_DE_ESTUDOS.md) — rotina + blocos (Java/Spring · PLSQL · panorama)
+- [FUNDAMENTOS_SPRING.md](./FUNDAMENTOS_SPRING.md) — Bloco A
+- [FUNDAMENTOS_PLSQL.md](./FUNDAMENTOS_PLSQL.md) — Bloco B
+- [PANORAMA.md](./PANORAMA.md) — Docker / microsserviços / AWS
+- [PROJETOS.md](./PROJETOS.md) — práticas e labs
+- [CADERNO.md](./CADERNO.md) — registro do que está estudando
 
 ## Como rodar (local)
 
@@ -43,4 +45,4 @@ Em evolução: camadas Service/DTO, validação, testes e Docker — ver [PROJET
 
 ## Próximo passo
 
-Seguir a **Etapa 1** em [PROJETOS.md](./PROJETOS.md): extrair `UserService` e completar o CRUD.
+Ativar o bloco no `CADERNO.md` e seguir a semana correspondente no plano.

@@ -1,255 +1,223 @@
-# Plano de estudos — ajustado à sua rotina real
+# Plano de evolução técnica
 
 > Para: Lucas Williams  
-> Stack no trabalho: **Angular + Java + Spring + SQL/PLSQL**  
-> Objetivo: fechar lacunas de entrevista (ex.: Spring × Spring Boot) sem quebrar sono, academia e futebol
+> Stack no trabalho: **Angular · Java · Spring · SQL/PLSQL**  
+> Objetivo: **evoluir conhecimento de verdade** (profundidade + panorama), no ritmo da sua rotina — sem orientar o plano por entrevista
 
 ---
 
-## Sua rotina (base do plano)
+## Sua rotina (não muda)
 
 | Horário | Seg–Sex |
 |---------|---------|
 | 04:30 | Acorda |
 | ~05:40 | Deixa a esposa |
 | 06:10 | Chega no trabalho |
-| **06:15–07:50** | **Janela principal de estudo** (~1h15–1h30) |
+| **06:15–07:50** | **Janela principal** (~1h15–1h30) |
 | 08:00–18:00 | Expediente |
-| ~19:00 | Chega em casa |
+| ~19:00 | Em casa |
 | 19:30 | Academia (exceto **quarta** → futebol) |
-| após academia | Higiene + dormir cedo (acordar 04:30) |
+| após academia | Dormir cedo |
 
 | Fim de semana | |
 |---------------|--|
-| **Sábado** | Futebol 06:00–09:00 → em casa ~10:00 → estudo **10:30–12:00** |
-| **Domingo** | Simulação de entrevista + revisão leve **09:00–10:00** (ou outro horário fixo) |
+| **Sábado** | Futebol 06:00–09:00 → casa ~10:00 → estudo **10:30–12:00** |
+| **Domingo** | Revisão / consolidar anotações **45–60 min** |
 
-### Regras de ouro (pra não abandonar)
+### Regras de ouro
 
-1. **Estudo pesado = manhã no trabalho (06:15–07:50).** Cabeça fresca, sem academia no meio.
-2. **Noite depois da academia = no máximo 15 min** de flashcard no celular, ou **zero**. Sono > mais uma hora forçada.
-3. **Quarta à noite e sábado de manhã** são futebol → não planejar código nesses horários.
-4. Meta realista: **~7–8 h/semana**, não 12. Constância ganha de maratona.
-5. No expediente, quando aparecer algo (Spring, SQL, Angular), anote 1 linha em `GAPS.md` — vira material do **bloco atual** (não muda a tecnologia da semana).
-
----
-
-## Estratégia: bloco de foco (não rodízio de tecnologias)
-
-### A resposta curta
-
-**Melhor agora: vários dias seguidos na mesma stack** (Java + Spring + o projeto),  
-**não** “segunda Spring, terça Java, quarta SQL, sexta Angular”.
-
-### Por quê
-
-| Rodízio 1 tech/dia | Bloco de foco (recomendado) |
-|--------------------|-----------------------------|
-| Todo dia troca de contexto | Mesma linha por 1–2 semanas |
-| Parece produtivo, gruda pouco | Repete, fala, aplica → fixa |
-| Angular/SQL “roubam” a manhã do gap da entrevista | Trabalho já te expõe a Angular/SQL |
-| Com 75 min/dia, mal aprofunda | 75 min × 4–5 dias no mesmo tema = progresso real |
-
-Você **já pratica** Angular e SQL/PLSQL no expediente. O buraco da entrevista foi **conceito Spring/Java**. Então o estudo formal concentra nisso.
-
-### O que muda na prática
-
-- **Dentro da semana:** muda a *atividade* (ler → falar → codar → revisar), não a *tecnologia*.
-- **Entre semanas:** quando o bloco atual estiver “explicável em voz alta”, aí sim troca (ex.: 2 semanas Spring/Java → depois 1 semana SQL entrevista → depois Angular).
-- **Domingo:** único dia que mistura perguntas (simulado), de propósito.
-
-### Ordem dos blocos (próximos meses)
-
-| Bloco | Duração | Foco |
-|-------|---------|------|
-| **1 — Spring + Java + `api_rest`** | **2–3 semanas** (agora) | Spring×Boot, DI, camadas, Optional, Service, CRUD |
-| **2 — SQL/PLSQL “de entrevista”** | 1 semana | Explicar JOIN, índice, ACID, SQL×PLSQL (ligar no JPA) |
-| **3 — Angular de entrevista** | 1 semana | Component, Service, HTTP, o que você já usa no trabalho |
-| Volta ao bloco 1 ou avança Fase B/C | … | Profundidade / portfólio |
-
-Não “termina Java 100%” pra só depois ir pro Angular — **Java nunca termina**. O critério de saída do bloco é: *consigo explicar o checklist do bloco sem olhar*.
+1. Estudo pesado = **manhã 06:15–07:50**
+2. Noite pós-academia = no máximo 15 min de revisão leve, ou zero
+3. Quarta noite e sábado de manhã = futebol → sem estudo
+4. Meta: **~7–8 h/semana**
+5. Trabalho alimenta o caderno (`CADERNO.md`): 1 dúvida/linha → entra no bloco certo depois
 
 ---
 
-## Grade na semana (Bloco 1 — Spring / Java / projeto)
+## Duas velocidades de estudo
 
-Horários iguais; **tema da semana = backend**.
+Você pediu profundidade **e** assuntos mais amplos. Isso pede dois modos:
 
-### Segunda a quarta — teoria + falar (mesmo eixo)
+| Modo | Para quê | Como estudar | Duração típica |
+|------|----------|--------------|----------------|
+| **Profundo** | Java/Spring, PLSQL | Ler → anotar → **aplicar** (código/script) → revisar | 2 semanas por bloco |
+| **Panorama** | Microsserviços, Docker, AWS, etc. | Conceito + desenho + lab mínimo (subir algo / console) | **1 semana** por tema |
 
-**06:15–07:50**
-
-| Bloco | Tempo | O que fazer |
-|-------|-------|-------------|
-| Ler | 25 min | 1 assunto do eixo Spring/Java (`ENTREVISTA_FUNDAMENTOS.md` ou tema da semana) |
-| Falar | 15 min | Explicar / gravar áudio ~2 min |
-| Escrever | 15 min | 5–8 linhas com suas palavras |
-| Fechar | 5–10 min | Atualizar `GAPS.md` |
-
-**Quarta à noite = futebol** → só manhã.
-
-Progressão típica no Bloco 1 (um tema por dia, mas todos Spring/Java):
-
-1. Spring × Spring Boot  
-2. DI / IoC / Bean  
-3. `@SpringBootApplication` + starters  
-4. Camadas Controller × Service × Repository  
-5. `Optional` / `equals` (Java ligado ao seu código)  
-6. `@Transactional` (conceito)  
-7. REST + status HTTP  
-
-### Quinta — código (`api_rest`)
-
-**06:15–07:50** · aplica o que estudou na semana (Etapa 1 em `PROJETOS.md`).
-
-1 objetivo pequeno + commit (`wip:` ok).
-
-### Sexta — revisão do bloco (não Angular por enquanto)
-
-**06:15–07:50**
-
-- Refazer 5–8 perguntas **só do Bloco 1**
-- Ouvir/ler suas anotações da semana
-- Anotar o que ainda trava → entra na segunda
-
-Angular fica para o **Bloco 3**, não toda sexta.
-
-### Sábado — projeto (mesmo eixo)
-
-**10:30–12:00** · continua o `api_rest` (PUT/DELETE, DTO, etc.).
-
-### Domingo — simulado
-
-**45–60 min** · 6–8 perguntas em voz alta (maioria do bloco atual + 1–2 surpresa).  
-O que falhar vira tema da segunda — **ainda no mesmo bloco**, até fechar.
+Regra: panorama **não** compete com profundo no mesmo dia. É um bloco separado no ciclo.
 
 ---
 
-## Resumo visual (Bloco 1)
+## Estratégia: blocos de foco
+
+Continua valendo: **vários dias na mesma linha**, não “um dia cada tecnologia”.
+
+Ordem sugerida do **ciclo** (repete e aprofunda):
+
+| Ordem | Bloco | Modo | Semanas |
+|-------|-------|------|---------|
+| 1 | **Java + Spring** (+ projeto `api_rest`) | Profundo | 2 |
+| 2 | **SQL / PLSQL** | Profundo | 2 |
+| 3 | **Panorama** (Docker **ou** AWS **ou** microsserviços — um por vez) | Panorama | 1 |
+| — | Volta ao 1 ou 2 com tema mais avançado | — | — |
+
+Angular: você já pratica no trabalho. Só vira bloco próprio se quiser (depois de 1–2 ciclos), ou 1 domingo de consolidação do que usou na semana.
+
+**Critério pra trocar de bloco:** consegue explicar o checklist do bloco com suas palavras **e** tem um artefato (commit, script `.sql`, nota + lab). Não precisa “terminar a tecnologia”.
+
+---
+
+## Como é uma semana (qualquer bloco)
+
+Horários fixos; o **conteúdo** vem do bloco ativo.
+
+| Dia | Horário | Atividade |
+|-----|---------|-----------|
+| Seg | 06:15–07:50 | Conceito 1 do bloco |
+| Ter | 06:15–07:50 | Conceito 2 (mesmo bloco) |
+| Qua | 06:15–07:50 | Conceito 3 ou exercício curto |
+| Qui | 06:15–07:50 | **Aplicar** (código Java **ou** script PLSQL **ou** lab Docker/AWS) |
+| Sex | 06:15–07:50 | Revisar a semana (só o bloco atual) |
+| Sáb | 10:30–12:00 | Bloco longo de prática / projeto |
+| Dom | 45–60 min | Consolidar: reler notas, completar `CADERNO.md`, escolher próximo tema do bloco |
 
 ```
-SEG  06:15  Spring/Java — ler + falar
-TER  06:15  Spring/Java — próximo conceito (mesmo eixo)
-QUA  06:15  Spring/Java — próximo conceito
-     noite  futebol ❌
-QUI  06:15  Código api_rest (aplica o bloco)
-SEX  06:15  Revisão do bloco (sem trocar pra Angular)
-SÁB  10:30  Projeto 90 min (mesmo eixo)
-DOM  09:00  Simulado 45–60 min
-
-Noites academia: flashcard do BLOCO ATUAL (15 min) ou dormir.
+SEG–QUA  conceito (mesmo bloco)
+QUI      prática
+SEX      revisão
+SÁB      prática longa
+DOM      consolidar
 ```
 
-**Total:** ~7,5 h/semana · tudo puxando a mesma corda.
+---
+
+## Bloco A — Java / Spring (profundo · 2 semanas)
+
+Materiais: `FUNDAMENTOS_SPRING.md` · projeto: `PROJETOS.md`
+
+### Semana A1 — bases que sustentam o dia a dia
+
+| Dia | Tema |
+|-----|------|
+| Seg | Spring × Spring Boot (o que cada um é) |
+| Ter | DI / IoC / Bean |
+| Qua | Camadas: Controller × Service × Repository |
+| Qui | Código: criar `UserService` e tirar Repository do Controller |
+| Sex | Revisar Seg–Qui |
+| Sáb | `orElseThrow`, PUT, DELETE |
+| Dom | Consolidar notas |
+
+### Semana A2 — qualidade no projeto
+
+| Dia | Tema |
+|-----|------|
+| Seg | `@SpringBootApplication` + starters |
+| Ter | REST + status HTTP (visão prática) |
+| Qua | `@Transactional` + ideia de ACID |
+| Qui | DTOs request/response |
+| Sex | Revisão A1+A2 |
+| Sáb | `@Transactional` no service + README |
+| Dom | Checklist A e anotar dúvidas no `CADERNO.md` |
+
+**Próximos ciclos A (exemplos):** validação, exception handler, testes, JPA lazy/N+1, paginação, Security básico.
 
 ---
 
-## Método de fixação (em todo tema)
+## Bloco B — SQL / PLSQL (profundo · 2 semanas)
 
-1. Explicar em voz alta em ~2 min  
-2. Escrever 5–8 linhas com suas palavras  
-3. Aplicar no código (quinta/sábado)  
-4. Commit quando houver mudança no repo  
+Material: `FUNDAMENTOS_PLSQL.md`  
+Prática: pasta sugerida `estudo-plsql/` (scripts seus, **sem dado sensível do trabalho**)
 
-Se não explica sem olhar → **repete no dia seguinte** (não pula pra outra tecnologia).
+### Semana B1 — SQL sólido
 
----
+| Dia | Tema |
+|-----|------|
+| Seg | SELECT avançado: WHERE, ORDER, funções |
+| Ter | JOINs (INNER/LEFT) com exemplo próprio |
+| Qua | GROUP BY / HAVING + agregações |
+| Qui | Escrever 3 queries e explicar o plano mental |
+| Sex | Revisar |
+| Sáb | Índices + PK/FK (conceito + quando ajuda) |
+| Dom | Consolidar |
 
-## Diagnóstico (preencher e atualizar)
+### Semana B2 — PLSQL de verdade
 
-| Pergunta | Consegui? | Prioridade |
-|----------|-----------|------------|
-| **Spring × Spring Boot** | **não (entrevista)** | **P0** |
-| DI / IoC / Bean | | P0 |
-| `@SpringBootApplication` | | P0 |
-| Controller × Service × Repository | | P0 |
-| API REST + status HTTP | | P1 |
-| `@Transactional` / ACID | | P1 |
-| JPA × Hibernate × Spring Data | | P1 |
-| SQL JOIN / índice / transação | | P1 (você usa — foque em explicar) |
-| Angular: module/component/service | | P2 |
-| DTO, validação, 404 | | P2 |
+| Dia | Tema |
+|-----|------|
+| Seg | Bloco anônimo: `DECLARE` / `BEGIN` / `EXCEPTION` |
+| Ter | Procedures × Functions |
+| Qua | Cursors (explícito) — ideia e 1 exemplo |
+| Qui | Escrever procedure simples (insert/update + tratamento) |
+| Sex | Revisar B2 |
+| Sáb | Package (spec + body) mínimo **ou** trigger simples |
+| Dom | Consolidar + ligar: “quando eu usaria isso no Java/Spring?” |
 
-Detalhes: `GAPS.md` · respostas-modelo: `ENTREVISTA_FUNDAMENTOS.md` · tarefas de código: `PROJETOS.md`
-
----
-
-## Mapa de fases (continua valendo)
-
-### Fase A — falar o básico sem travar (~2–3 semanas nesta rotina)
-
-Spring × Boot, DI, camadas, REST, Java OOP básico, SQL que você já usa mas explica mal.
-
-### Fase B — Spring “de verdade” no `api_rest` (~3–4 semanas)
-
-Service, DTO, CRUD completo, `@Transactional`, validação, exception handler, testes.
-
-### Fase C — portfólio / júnior+ (~3–4 semanas)
-
-Docker, Flyway, Swagger, Security básico, CI.
-
-Não pule a Fase A: a entrevista mostrou que o buraco está no **conceito**, não só no código.
+**Próximos ciclos B:** bulk collect, collections PLSQL, performance básica, dynamic SQL (com cuidado), padrões do seu time.
 
 ---
 
-## Primeira semana (Bloco 1 — só Spring/Java)
+## Bloco C — Panorama (superficial mas útil · 1 semana cada)
 
-Assuma início na **próxima segunda**. Se começar no meio da semana, continue a ordem sem pular pra outra tech.
+Material: `PANORAMA.md`  
+Meta: **mapa mental + 1 lab mínimo**, não virar especialista na semana.
 
-| Dia | Horário | Conteúdo |
-|-----|---------|----------|
-| **Seg** | 06:15–07:50 | Spring × Spring Boot — ler, áudio, 8 linhas |
-| **Ter** | 06:15–07:50 | DI / IoC / Bean — mesmo eixo |
-| **Qua** | 06:15–07:50 | Camadas Controller × Service × Repository |
-| **Qui** | 06:15–07:50 | Código: criar `UserService` e mover findAll/findById/save |
-| **Sex** | 06:15–07:50 | Revisão: só perguntas Seg–Qua (+ Spring×Boot de novo) |
-| **Sáb** | 10:30–12:00 | Código: `orElseThrow` + PUT + DELETE |
-| **Dom** | 45–60 min | Simulado: Spring×Boot, DI, camadas, Optional, REST |
+Rodízio sugerido (um tema por vez no slot C):
 
-Fim do domingo → `GAPS.md`. Se Spring×Boot ainda travar, **segunda repete** (não vai pra SQL/Angular).
+1. **Docker**  
+2. **Microsserviços** (conceitos)  
+3. **AWS** (visão: o que é VPC, EC2, S3, RDS, IAM — nível mapa)  
+4. Depois: Kubernetes (só ideia), mensageria (fila), CI/CD, etc.
 
----
+### Exemplo — semana Docker
 
-## Segunda semana (ainda Bloco 1)
+| Dia | Tema |
+|-----|------|
+| Seg | O que é container × VM |
+| Ter | Imagem × container × Dockerfile |
+| Qua | `docker run` / `ps` / `logs` (prática) |
+| Qui | Dockerfile simples (ou compose app+Postgres) |
+| Sex | Revisar |
+| Sáb | Subir Postgres (ou a API) com Compose e anotar passos |
+| Dom | Desenhar no papel: app → container → banco |
 
-| Dia | Conteúdo |
-|-----|----------|
-| Seg | `@SpringBootApplication` + o que é starter |
-| Ter | Java: `==` vs `equals` + `Optional` (seu `.get()` no controller) |
-| Qua | `@Transactional` + ACID (conceito; liga no service) |
-| Qui | Código: DTOs `UserRequest` / `UserResponse` |
-| Sex | Revisão do Bloco 1 (8 perguntas) |
-| Sáb | `@Transactional` no `UserService` + commit |
-| Dom | Simulado Bloco 1; se ≥80% fluente → na **semana 3** pode abrir Bloco 2 (SQL) |
+### Exemplo — semana microsserviços
 
-Angular **não** entra ainda.
+Foco em ideias: monólito × serviços, API gateway, comunicação síncrona × assíncrona, consistência, quando **não** usar. Sem implementar frota de serviços.
 
----
+### Exemplo — semana AWS
 
-## Como usar o trabalho a favor (08:00–18:00)
-
-- Angular/SQL no expediente = prática. **Não precisa** estudar os dois toda semana de manhã.
-- Se algo do trabalho for do **bloco atual** (ex.: Spring) e você não explicaria → anota no `GAPS.md` e estuda na manhã seguinte.
-- Se for de outro bloco (ex.: Angular na semana de Spring) → só anota; estuda quando o bloco daquela tech começar.
+Conta/região, IAM (usuário × role), S3, EC2, RDS — “pra que serve” + um lab gratuito leve (ex.: bucket S3 ou só console tour documentado).
 
 ---
 
-## Medir progresso (a cada 2 semanas)
+## Caderno e progresso
 
-- [ ] Explico Spring × Boot sem olhar  
-- [ ] Explico DI + camadas Controller/Service/Repository  
-- [ ] `UserService` existe no repo  
-- [ ] Fiz 2 simulados de domingo  
-- [ ] Academia + futebol mantidos (plano sustentável)  
-- [ ] Sono ok na maioria dos dias  
+Use `CADERNO.md` (não é lista de entrevista):
 
-Se o plano competir com sono ou academia, **corte a noite**, nunca a manhã.
+- O que estudei
+- O que ainda não explica bem
+- Ideias do trabalho pra estudar no bloco certo
+
+A cada 2 ciclos (~2 meses):
+
+- [ ] `api_rest` ganhou camadas Service/DTO
+- [ ] Tenho scripts PLSQL meus versionados
+- [ ] Já fiz pelo menos 1 lab Docker e 1 panorama AWS ou microsserviços
+- [ ] Consigo ensinar o último bloco a alguém em 10 min
+
+---
+
+## Trabalho (08:00–18:00) a favor
+
+- Angular/SQL/Java no expediente = prática diária
+- Se aparecer algo do **bloco ativo** e você não dominar → 1 linha no caderno → estuda na manhã
+- Se for de outro bloco → anota e espera o bloco daquela tech (evita pular de galho)
 
 ---
 
 ## Mentalidade
 
-Você não tem “falta de tempo” — tem **uma janela boa** (06:15–07:50) e um bloco de sábado.  
-Com 7h/semana bem usadas, em 1–2 meses a entrevista básica para de te derrubar.
+Evoluir ≠ estudar tudo todo dia.  
+É **profundidade em rodízio** + **panorama curto** pra não ficar só no CRUD eterno.
 
-Quando quiser, me passa as **outras perguntas** da entrevista — encaixo no bloco certo (não espalho na semana toda).
+Horários e futebol/academia ficam; o que muda é o bloco ativo.  
+Quando terminar um bloco, diga qual quer puxar (A, B ou C) que montamos a semana seguinte no detalhe.
