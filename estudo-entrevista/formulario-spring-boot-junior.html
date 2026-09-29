@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário de Estudo — Avanade Spring Boot Júnior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14212b;
+      --muted: #5a6b78;
+      --line: #d5dde4;
+      --paper: #f7f4ef;
+      --card: #fffdf9;
+      --accent: #0f6e56;
+      --accent-soft: #d8f3e7;
+      --warn: #9a3412;
+      --warn-soft: #ffedd5;
+      --ok: #166534;
+      --shadow: 0 10px 30px rgba(20, 33, 43, 0.08);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #e7f6ef 0, transparent 35%),
+        linear-gradient(180deg, #efe8db 0%, var(--paper) 40%, #eef3f6 100%);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    header {
+      margin-bottom: 1.75rem;
+      animation: rise 0.6s ease both;
+    }
+
+    header p.eyebrow {
+      margin: 0 0 0.5rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.1rem;
+    }
+
+    .chip {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .progress-box {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 10;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+      animation: rise 0.7s ease both;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .bar {
+      height: 10px;
+      background: #e8eef2;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0f6e56, #2f9e7b);
+      transition: width 0.35s ease;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem 1.1rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      animation: rise 0.75s ease both;
+    }
+
+    section h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.35rem;
+      margin: 0 0 0.35rem;
+    }
+
+    section .hint {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 1rem;
+    }
+
+    .q {
+      border-top: 1px solid var(--line);
+      padding: 1rem 0 0.35rem;
+    }
+
+    .q:first-of-type { border-top: 0; padding-top: 0; }
+
+    .q-head {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-bottom: 0.55rem;
+    }
+
+    .num {
+      flex: 0 0 auto;
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .q h3 {
+      margin: 0.1rem 0 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      resize: vertical;
+      min-height: 96px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input[type="text"] { min-height: 0; }
+
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: #2f9e7b;
+      box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.15);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.65rem;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 0.55rem 0.95rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+
+    .btn-answer {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn-clear {
+      background: #eef2f5;
+      color: var(--ink);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.75rem 1.2rem;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 0.7rem;
+      padding: 0.85rem 0.95rem;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: #0b3d30;
+      font-size: 0.95rem;
+    }
+
+    .answer.show { display: block; animation: fade 0.25s ease; }
+
+    .answer strong { display: block; margin-bottom: 0.25rem; }
+
+    .scale {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.4rem;
+    }
+
+    .scale label {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.55rem 0.3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .scale input { display: none; }
+    .scale input:checked + span,
+    .scale label:has(input:checked) {
+      background: var(--accent-soft);
+      border-color: #2f9e7b;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .checklist label {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .checklist input { margin-top: 0.2rem; }
+
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+
+    .note {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+      background: var(--warn-soft);
+      color: var(--warn);
+      font-size: 0.92rem;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 640px) {
+      .scale { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .scale label { font-size: 0.75rem; padding: 0.5rem 0.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Avanade · Entrevista 06/10 · 15h30</p>
+      <h1>Formulário de estudo — Back End Spring Boot Júnior</h1>
+      <p class="lead">
+        Treino objetivo para entrevista técnica de 30 minutos com o projeto.
+        Responda em voz alta como se estivesse na call. Depois compare com o gabarito.
+      </p>
+      <div class="meta">
+        <span class="chip">30 minutos</span>
+        <span class="chip">Java + Spring Boot</span>
+        <span class="chip">Nível júnior</span>
+        <span class="chip">Respostas salvas neste navegador</span>
+      </div>
+    </header>
+
+    <div class="progress-box">
+      <div class="progress-top">
+        <span>Progresso do estudo</span>
+        <strong id="progressText">0 / 0 respondidas</strong>
+      </div>
+      <div class="bar"><span id="progressBar"></span></div>
+    </div>
+
+    <form id="studyForm">
+      <section>
+        <h2>0. Elevator pitch (45–60s)</h2>
+        <p class="hint">Grave mentalmente. Na entrevista curta, isso abre bem.</p>
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">0</span><h3>Apresente-se: quem é, o que já fez com Java/Spring e o que busca.</h3></div>
+          <textarea name="q0" placeholder="Ex.: Sou o Lucas, desenvolvedor backend... já construí APIs REST com Spring Boot, JPA e SQL. Busco evoluir em um projeto real de consultoria..."></textarea>
+          <div class="actions">
+            <button type="button" class="btn-answer" data-reveal>Ver modelo de resposta</button>
+          </div>
+          <div class="answer">
+            <strong>Modelo</strong>
+            “Sou o Lucas Williams, desenvolvedor backend focado em Java. Já montei APIs REST com Spring Boot, camadas controller/service/repository, JPA e banco relacional. Gosto de escrever código organizado, testável e fácil de manter. Quero contribuir em um projeto real, aprender com o time e evoluir como júnior com responsabilidade.”
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. Fundamentos Java</h2>
+        <p class="hint">Perguntas rápidas — responda em 30–60 segundos cada.</p>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">1</span><h3>Qual a diferença entre <code>==</code> e <code>.equals()</code>?</h3></div>
+          <textarea name="q1"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            <code>==</code> compara referência (se é o mesmo objeto na memória) para tipos por referência. <code>.equals()</code> compara o conteúdo/valor, quando a classe sobrescreve o método (ex.: String). Para primitivos, <code>==</code> compara o valor.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">2</span><h3>Explique List, Set e Map com um exemplo de uso.</h3></div>
+          <textarea name="q2"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            List: ordem + permite duplicados (lista de pedidos). Set: sem duplicados (conjunto de e-mails únicos). Map: chave → valor (id do usuário → usuário).
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">3</span><h3>O que são checked e unchecked exceptions?</h3></div>
+          <textarea name="q3"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Checked: o compilador obriga tratar ou declarar (ex.: IOException). Unchecked: RuntimeException e subclasses (ex.: NullPointerException, IllegalArgumentException) — não são obrigatórias no compile-time.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">4</span><h3>O que é injeção de dependência e por que o Spring usa isso?</h3></div>
+          <textarea name="q4"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Em vez da classe criar suas dependências (<code>new</code>), ela recebe pronta (construtor). Isso facilita testes, troca de implementação e deixa o código mais desacoplado. O Spring gerencia o ciclo de vida dos beans e injeta as dependências.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Spring Boot &amp; API REST</h2>
+        <p class="hint">Núcleo da vaga. Priorize esta seção.</p>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">5</span><h3>O que o Spring Boot resolve em relação ao Spring “puro”?</h3></div>
+          <textarea name="q5"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Reduz configuração manual com auto-configuration, starters (web, data-jpa), servidor embutido (Tomcat) e convenções prontas. Você sobe uma API mais rápido e com menos XML/config boilerplate.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">6</span><h3>Explique a responsabilidade de Controller, Service e Repository.</h3></div>
+          <textarea name="q6"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Controller: recebe HTTP, valida entrada básica, devolve response. Service: regra de negócio e orquestração. Repository: acesso a dados (JPA/banco). Separar isso deixa o código limpo e testável.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">7</span><h3>Diferença entre <code>@RestController</code> e <code>@Controller</code>?</h3></div>
+          <textarea name="q7"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            <code>@RestController</code> = <code>@Controller</code> + <code>@ResponseBody</code>. Ideal para API JSON. <code>@Controller</code> costuma retornar views (HTML/templates), a menos que use <code>@ResponseBody</code> no método.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">8</span><h3>Quando usar GET, POST, PUT, PATCH e DELETE?</h3></div>
+          <textarea name="q8"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            GET: buscar (não altera estado). POST: criar. PUT: substituir recurso inteiro. PATCH: atualizar parcial. DELETE: remover. GET deve ser idempotente/seguro; PUT/DELETE idempotentes na prática REST.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">9</span><h3>Cite status HTTP comuns e quando usar cada um.</h3></div>
+          <textarea name="q9"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            200 OK, 201 Created, 204 No Content, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict, 500 Internal Server Error.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">10</span><h3>O que é DTO e por que não expor a Entity direto?</h3></div>
+          <textarea name="q10"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            DTO é um objeto de transferência para entrada/saída da API. Evita vazar campos internos, reduz acoplamento com o banco, facilita validação e evita problemas de serialização/lazy loading do JPA.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">11</span><h3>Como você trata erros de forma padronizada numa API?</h3></div>
+          <textarea name="q11"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Com <code>@ControllerAdvice</code> + <code>@ExceptionHandler</code>, devolvendo um JSON padrão (mensagem, código, timestamp, campos inválidos). Também validação com <code>@Valid</code> + Bean Validation (<code>@NotBlank</code>, <code>@NotNull</code>).
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">12</span><h3>O que vai no <code>application.properties</code>/<code>application.yml</code>?</h3></div>
+          <textarea name="q12"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Porta do servidor, configuração do banco (url, user, password), dialeto JPA, <code>ddl-auto</code>, profiles (<code>dev</code>/<code>prod</code>), logs, etc. Segredos não devem ir commitados — usar env vars/secrets.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. JPA, banco e SQL</h2>
+        <p class="hint">Muito comum em entrevista júnior backend.</p>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">13</span><h3>O que é JPA e o que é Hibernate nesse contexto?</h3></div>
+          <textarea name="q13"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            JPA é a especificação (API) de persistência. Hibernate é uma implementação dessa especificação (ORM). No Spring Data JPA, geralmente usamos Hibernate por baixo.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">14</span><h3>Diferença entre <code>@Entity</code>, <code>@Id</code> e <code>@GeneratedValue</code>?</h3></div>
+          <textarea name="q14"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            <code>@Entity</code>: classe mapeada para tabela. <code>@Id</code>: chave primária. <code>@GeneratedValue</code>: estratégia de geração do id (IDENTITY, SEQUENCE, etc.).
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">15</span><h3>Explique relacionamento <code>@OneToMany</code> / <code>@ManyToOne</code> com exemplo.</h3></div>
+          <textarea name="q15"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Ex.: Pedido tem muitos Itens (<code>@OneToMany</code>); cada Item pertence a um Pedido (<code>@ManyToOne</code>). O lado Many costuma ter a FK. Cuidado com cascata e fetch lazy/eager.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">16</span><h3>O que é Lazy Loading e qual problema clássico ele causa na API?</h3></div>
+          <textarea name="q16"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Lazy carrega o relacionamento só quando acessado. Fora da transação pode dar <code>LazyInitializationException</code>. Por isso usamos DTO, join fetch, <code>@EntityGraph</code> ou mapeamento cuidadoso — e evitamos serializar entity com proxy lazy.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">17</span><h3>Escreva um SQL: buscar usuários ativos ordenados por nome.</h3></div>
+          <textarea name="q17" placeholder="SELECT ..."></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            <code>SELECT * FROM usuarios WHERE ativo = true ORDER BY nome ASC;</code>
+            (sintaxe pode variar: 1/0 no Oracle/MySQL antigo, etc.)
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">18</span><h3>Diferença entre INNER JOIN e LEFT JOIN?</h3></div>
+          <textarea name="q18"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            INNER JOIN: só registros com correspondência nas duas tabelas. LEFT JOIN: todos da esquerda + correspondências da direita (ou null se não houver).
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. Mini cenário técnico (como no projeto)</h2>
+        <p class="hint">Treine pensar em voz alta — é o que o time avalia.</p>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">19</span><h3>Como você modelaria um CRUD de Produto (campos, endpoints, camadas)?</h3></div>
+          <textarea name="q19"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Roteiro bom</strong>
+            Entity Produto (id, nome, preco, ativo). DTOs de create/update/response. Endpoints: POST/GET/GET{id}/PUT/PATCH/DELETE em <code>/produtos</code>. Repository JpaRepository, Service com regras (preço &gt; 0, nome obrigatório), Controller com <code>ResponseEntity</code> e status corretos. Mencionar validação e tratamento de “não encontrado”.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">20</span><h3>Um endpoint está lento. O que você investigaria primeiro?</h3></div>
+          <textarea name="q20"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Roteiro bom</strong>
+            Reproduzir, olhar logs, medir tempo, checar query N+1, índices no banco, volume de dados, serialização pesada, chamadas externas. Para júnior: mostrar método (não chutar solução mágica).
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">21</span><h3>Como você evita N+1 queries no JPA?</h3></div>
+          <textarea name="q21"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Detectar (logs SQL), usar join fetch / entity graph, projetar só campos necessários (DTO/interface projection), evitar EAGER em tudo, paginar listas grandes.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>5. Git, qualidade e dia a dia</h2>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">22</span><h3>Explique o fluxo: branch → commit → push → pull request.</h3></div>
+          <textarea name="q22"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Crio branch a partir de main, desenvolvo, faço commits claros, push da branch, abro PR para revisão. Após aprovação/CI, merge. Em consultoria isso é rotina.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">23</span><h3>O que você testa numa API júnior (pelo menos o básico)?</h3></div>
+          <textarea name="q23"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Testes unitários do service (regras), testes de controller com MockMvc, validar status HTTP e JSON. Se possível, teste de integração do repository. Mencionar JUnit 5 e Mockito já conta ponto.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">24</span><h3>Diferença entre autenticação e autorização?</h3></div>
+          <textarea name="q24"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver gabarito</button></div>
+          <div class="answer">
+            <strong>Gabarito</strong>
+            Autenticação: quem é você (login/token). Autorização: o que você pode fazer (roles/permissões). Em Spring, isso aparece no Spring Security.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>6. Comportamental curto (projeto/consultoria)</h2>
+        <p class="hint">Responda com situação → ação → resultado.</p>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">25</span><h3>Conte uma vez em que você não sabia algo e como resolveu.</h3></div>
+          <textarea name="q25"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver roteiro</button></div>
+          <div class="answer">
+            <strong>Roteiro</strong>
+            Situação (prazo/bug/conceito novo) → o que você fez (docs, debug, pedir ajuda com contexto) → o que aprendeu → resultado. Mostre autonomia sem fingir que sabe tudo.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">26</span><h3>Como você lida com prazo apertado e mudança de escopo?</h3></div>
+          <textarea name="q26"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver roteiro</button></div>
+          <div class="answer">
+            <strong>Roteiro</strong>
+            Priorizar com o time, comunicar risco cedo, entregar fatia útil primeiro (MVP), documentar pendências. Em consultoria, comunicação &gt; herói silencioso.
+          </div>
+        </div>
+
+        <div class="q" data-q>
+          <div class="q-head"><span class="num">27</span><h3>Por que Avanade / por que essa vaga?</h3></div>
+          <textarea name="q27"></textarea>
+          <div class="actions"><button type="button" class="btn-answer" data-reveal>Ver roteiro</button></div>
+          <div class="answer">
+            <strong>Roteiro</strong>
+            Quer aprender em projeto real, ambiente de consultoria, stack Java/Spring, evoluir com padrões de mercado e trabalhar em time. Seja sincero e específico com sua trajetória.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>7. Autoavaliação (1 = fraco, 5 = confiante)</h2>
+        <p class="hint">Marque com honestidade. Foque estudo onde estiver 1–3.</p>
+
+        <div class="q">
+          <div class="q-head"><span class="num">A</span><h3>Java / coleções / OOP</h3></div>
+          <div class="scale" data-scale="java">
+            <label><input type="radio" name="s_java" value="1" /><span>1</span></label>
+            <label><input type="radio" name="s_java" value="2" /><span>2</span></label>
+            <label><input type="radio" name="s_java" value="3" /><span>3</span></label>
+            <label><input type="radio" name="s_java" value="4" /><span>4</span></label>
+            <label><input type="radio" name="s_java" value="5" /><span>5</span></label>
+          </div>
+        </div>
+        <div class="q">
+          <div class="q-head"><span class="num">B</span><h3>Spring Boot / REST</h3></div>
+          <div class="scale">
+            <label><input type="radio" name="s_spring" value="1" /><span>1</span></label>
+            <label><input type="radio" name="s_spring" value="2" /><span>2</span></label>
+            <label><input type="radio" name="s_spring" value="3" /><span>3</span></label>
+            <label><input type="radio" name="s_spring" value="4" /><span>4</span></label>
+            <label><input type="radio" name="s_spring" value="5" /><span>5</span></label>
+          </div>
+        </div>
+        <div class="q">
+          <div class="q-head"><span class="num">C</span><h3>JPA / SQL</h3></div>
+          <div class="scale">
+            <label><input type="radio" name="s_jpa" value="1" /><span>1</span></label>
+            <label><input type="radio" name="s_jpa" value="2" /><span>2</span></label>
+            <label><input type="radio" name="s_jpa" value="3" /><span>3</span></label>
+            <label><input type="radio" name="s_jpa" value="4" /><span>4</span></label>
+            <label><input type="radio" name="s_jpa" value="5" /><span>5</span></label>
+          </div>
+        </div>
+        <div class="q">
+          <div class="q-head"><span class="num">D</span><h3>Explicar projeto em voz alta</h3></div>
+          <div class="scale">
+            <label><input type="radio" name="s_talk" value="1" /><span>1</span></label>
+            <label><input type="radio" name="s_talk" value="2" /><span>2</span></label>
+            <label><input type="radio" name="s_talk" value="3" /><span>3</span></label>
+            <label><input type="radio" name="s_talk" value="4" /><span>4</span></label>
+            <label><input type="radio" name="s_talk" value="5" /><span>5</span></label>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. Checklist no dia da entrevista</h2>
+        <div class="checklist">
+          <label><input type="checkbox" name="c1" /> Testei o link do Teams / áudio / câmera</label>
+          <label><input type="checkbox" name="c2" /> Tenho o LinkedIn e o currículo abertos (só consulta)</label>
+          <label><input type="checkbox" name="c3" /> Revisei 1 projeto meu (stack, endpoints, dificuldades)</label>
+          <label><input type="checkbox" name="c4" /> Repassei Controller / Service / Repository + HTTP status</label>
+          <label><input type="checkbox" name="c5" /> Preparei 1 pergunta para eles (stack, time, dia a dia do júnior)</label>
+          <label><input type="checkbox" name="c6" /> Ambiente quieto, água, chegar 5–10 min antes</label>
+        </div>
+
+        <div class="note">
+          Em 30 minutos: respostas curtas e claras &gt; aula completa. Se não souber, diga o que sabe, o que pesquisaria e como validaria.
+        </div>
+
+        <div class="footer-actions">
+          <button type="button" class="btn-primary" id="exportBtn">Baixar minhas respostas (.txt)</button>
+          <button type="button" class="btn-clear" id="resetBtn">Limpar tudo</button>
+        </div>
+      </section>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("studyForm");
+    const KEY = "avanade-spring-junior-study-v1";
+
+    function allFields() {
+      return [...form.querySelectorAll("textarea, input[type='text'], input[type='radio'], input[type='checkbox']")];
+    }
+
+    function save() {
+      const data = {};
+      allFields().forEach((el) => {
+        if (el.type === "radio") {
+          if (el.checked) data[el.name] = el.value;
+        } else if (el.type === "checkbox") {
+          data[el.name] = el.checked;
+        } else {
+          data[el.name] = el.value;
+        }
+      });
+      localStorage.setItem(KEY, JSON.stringify(data));
+      updateProgress();
+    }
+
+    function load() {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) { updateProgress(); return; }
+      try {
+        const data = JSON.parse(raw);
+        allFields().forEach((el) => {
+          if (!(el.name in data)) return;
+          if (el.type === "radio") el.checked = data[el.name] === el.value;
+          else if (el.type === "checkbox") el.checked = !!data[el.name];
+          else el.value = data[el.name];
+        });
+      } catch (_) {}
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const textareas = [...form.querySelectorAll("[data-q] textarea")];
+      const filled = textareas.filter((t) => t.value.trim().length > 0).length;
+      const total = textareas.length;
+      document.getElementById("progressText").textContent = `${filled} / ${total} respondidas`;
+      document.getElementById("progressBar").style.width = `${total ? (filled / total) * 100 : 0}%`;
+    }
+
+    form.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-reveal]");
+      if (!btn) return;
+      const box = btn.closest(".q").querySelector(".answer");
+      box.classList.toggle("show");
+      btn.textContent = box.classList.contains("show") ? "Ocultar gabarito" : (btn.textContent.includes("roteiro") || btn.textContent.includes("modelo") ? btn.dataset.label || "Ver gabarito" : "Ver gabarito");
+    });
+
+    [...form.querySelectorAll("[data-reveal]")].forEach((btn) => {
+      btn.dataset.label = btn.textContent;
+      btn.addEventListener("click", () => {
+        const box = btn.closest(".q").querySelector(".answer");
+        btn.textContent = box.classList.contains("show") ? "Ocultar" : btn.dataset.label;
+      });
+    });
+
+    form.addEventListener("input", save);
+    form.addEventListener("change", save);
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      if (!confirm("Apagar todas as respostas salvas?")) return;
+      localStorage.removeItem(KEY);
+      form.reset();
+      form.querySelectorAll(".answer.show").forEach((a) => a.classList.remove("show"));
+      updateProgress();
+    });
+
+    document.getElementById("exportBtn").addEventListener("click", () => {
+      const lines = ["Estudo Avanade — Spring Boot Júnior", "Data: " + new Date().toLocaleString("pt-BR"), ""];
+      form.querySelectorAll("[data-q]").forEach((q, i) => {
+        const title = q.querySelector("h3")?.innerText || `Pergunta ${i}`;
+        const val = q.querySelector("textarea, input[type='text']")?.value?.trim() || "(sem resposta)";
+        lines.push(`${i}. ${title}`, val, "");
+      });
+      const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "estudo-avanade-spring-boot.txt";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    load();
+  </script>
+</body>
+</html>
